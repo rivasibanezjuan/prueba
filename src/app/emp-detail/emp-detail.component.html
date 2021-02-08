@@ -1,0 +1,52 @@
+<div *ngIf="emp != undefined">
+  <h2>{{emp.nombre | uppercase}} Details</h2>
+  <div><span>id: </span>{{emp.id}}</div>
+  <div>
+    <label
+      >Nombre:
+      <input [(ngModel)]="emp.nombre" placeholder="nombre" />
+    </label>
+    <br>
+    <label
+      >Sueldo:
+      <input #empSueldo  [(ngModel)]="emp.sueldo" placeholder="sueldo"/>
+    </label>
+        <br>
+    <label
+      >Departamento:
+      <input #empDepartamento  [(ngModel)]="emp.departamento" placeholder="departamento"/>
+    </label>
+         <br>
+    <label
+      >Email:
+      <input #empEmail  [(ngModel)]="emp.email" placeholder="email"/>
+    </label>
+         <br>
+    <label
+      >Calle:
+      <input #empCalle  [(ngModel)]="emp.calle" placeholder="calle"/>
+    </label>
+         <br>
+    <label
+      >Localidad:
+      <input #empLocalidad  [(ngModel)]="emp.localidad" placeholder="localidad"/>
+    </label>
+         <br>
+    <label
+      >Fecha de nacimiento:
+      <input #empFecha_n [(ngModel)]="emp.fecha_n" placeholder="fecha_n"/>
+    </label>
+         <br>
+    <label
+      >Teléfono:
+      <input #empTelefono  [(ngModel)]="emp.telefono" placeholder="telefono"/>
+    </label>
+         <br>
+    <label
+      >Fecha fin de contrato:
+      <input #empFecha_c  [(ngModel)]="emp.fecha_c" placeholder="fecha_c"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save(empSueldo.value)">save</button>
+</div>

@@ -1,0 +1,58 @@
+<h2> Añadir empleado </h2>
+
+<div>
+  <label>Nombre:
+    <input #empNombrey />
+  </label>
+  <br>
+    <label>Sueldo:
+    <input #empSueldo />
+  </label>
+  <br>
+    <label>Departamento:
+    <input #empDepartamento />
+  </label>  
+  <br>
+    <label>Email:
+    <input #empEmail />
+  </label>  
+  <br>
+    <label>Calle:
+    <input #empCalle />
+  </label>  
+  <br>
+    <label>Localidad:
+    <input #empLocalidad />
+  </label>  
+  <br>
+    <label>Fecha de nacimiento:
+    <input #empFecha_n />
+  </label>
+    <br>
+    <label>Teléfono:
+    <input #empTelefono />
+  </label>
+    <br>
+    <label>Fecha fin de contrato:
+    <input #empFecha_c />
+  </label>
+  <button (click)="add(empNombrey.value, empSueldo.value, empDepartamento.value, empEmail.value, empCalle.value, empLocalidad.value, empFecha_n.value, empTelefono.value, empFecha_c.value); empNombrey.value=''; empSueldo.value=''; empDepartamento.value=''; empEmail.value=''; empCalle.value=''; empLocalidad.value=''; empFecha_n.value=''; empTelefono.value=''; empFecha_c.value=''">
+    add
+  </button>
+</div>
+
+<h2>Lista de plantilla</h2>
+
+
+<ul class="empleados">
+  <li *ngFor="let emp of empleados">
+        <a routerLink="/detail/{{emp.id}}">
+    <span class="badge">{{emp.id}}</span> {{emp.nombre}} 
+    <span class= "sueldo">{{emp.sueldo}}</span>
+    </a>
+    <button class="delete" title="delete emp"
+      (click)="delete(emp)">x</button>
+  </li>
+</ul>
+
+
